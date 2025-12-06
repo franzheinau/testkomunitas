@@ -23,7 +23,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
             <div class="flex items-center gap-3">
                 <a href="{{ url('/') }}" class="text-lg font-semibold text-indigo-600">
-                    {{ config('app.name') }}
+                    {{ config('Pthree') }}
                 </a>
                 <nav class="hidden md:flex gap-4 text-sm text-gray-600">
                     <a href="#" class="hover:underline"></a>
