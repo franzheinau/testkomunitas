@@ -7,12 +7,14 @@
 
         <title>{{ $title ?? config('app.name', 'Laravel') }}</title>
 
+        <!-- Tailwind via CDN -->
         <script src="https://cdn.tailwindcss.com"></script>
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <!-- Scripts -->
+        {{-- Vite sudah tidak dipakai --}}
         {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
     </head>
     <body class="font-sans antialiased bg-slate-50 text-slate-900">
@@ -39,5 +41,8 @@
                 </main>
             </div>
         </div>
+
+        <!-- Alpine.js buat dropdown/menu responsif Jetstream -->
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </body>
 </html>
