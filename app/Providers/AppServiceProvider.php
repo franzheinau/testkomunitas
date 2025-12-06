@@ -30,6 +30,10 @@ class AppServiceProvider extends ServiceProvider
     $router->aliasMiddleware('role', \Spatie\Permission\Middleware\RoleMiddleware::class);
     $router->aliasMiddleware('permission', \Spatie\Permission\Middleware\PermissionMiddleware::class);
     $router->aliasMiddleware('role_or_permission', \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class);
+
+        if ($this->app->environment('production')) {
+        \URL::forceScheme('https');
+    }
     }
 
     protected $policies = [
