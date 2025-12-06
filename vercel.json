@@ -2,15 +2,22 @@
   "version": 2,
   "framework": null,
   "functions": {
-    "api/index.php": { "runtime": "vercel-php@0.7.4" }
+    "api/index.php": {
+      "runtime": "vercel-php@0.7.4"
+    }
   },
   "routes": [
+    {
+      "src": "/build/(.*)",
+      "dest": "/build/$1"
+    },
     {
       "src": "/(.*)",
       "dest": "/api/index.php"
     }
   ],
-  "buildCommand": "composer install --no-dev --optimize-autoloader && php artisan config:cache && npm install && npm run build",
+  "outputDirectory": "public",
+  "buildCommand": "composer install --no-dev --optimize-autoloader && npm install && npm run build && php artisan config:cache",
   "env": {
     "APP_ENV": "production",
     "APP_DEBUG": "false",
