@@ -9,14 +9,17 @@
   "routes": [
     {
       "src": "/build/(.*)",
-      "dest": "/build/$1"
+      "dest": "/public/build/$1"
+    },
+    {
+      "src": "/storage/(.*)",
+      "dest": "/public/storage/$1"
     },
     {
       "src": "/(.*)",
       "dest": "/api/index.php"
     }
   ],
-  "outputDirectory": "public",
   "buildCommand": "composer install --no-dev --optimize-autoloader && npm install && npm run build && php artisan config:cache",
   "env": {
     "APP_ENV": "production",
