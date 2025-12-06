@@ -13,7 +13,7 @@ return new class extends Migration {
             $table->string('title');
             $table->text('body');
             $table->timestamp('published_at')->nullable();
-            $table->softDeletes(); // optional, kalau model pakai SoftDeletes
+            //$table->softDeletes(); // optional, kalau model pakai SoftDeletes
             $table->timestamps();
         });
     }
